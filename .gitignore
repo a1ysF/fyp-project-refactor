@@ -23,6 +23,15 @@ uploads/*
 !uploads/materials/
 !uploads/materials/.gitkeep
 
+dashboard/uploads/*
+!dashboard/uploads/.gitkeep
+!dashboard/uploads/images/
+!dashboard/uploads/images/.gitkeep
+!dashboard/uploads/videos/
+!dashboard/uploads/videos/.gitkeep
+!dashboard/uploads/materials/
+!dashboard/uploads/materials/.gitkeep
+
 # Dependencies
 node_modules/
 

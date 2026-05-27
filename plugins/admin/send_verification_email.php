@@ -5,6 +5,9 @@ use PHPMailer\PHPMailer\Exception;
 require 'phpmailer/vendor/autoload.php'; // Include Composer's autoloader
 
 function sendVerificationEmail($email, $token) {
+    $baseUrl = getenv('APP_BASE_URL') ?: 'http://localhost';
+    $verifyUrl = rtrim($baseUrl, '/') . '/login_signup/verify.php?token=' . urlencode($token);
+
     $mail = new PHPMailer(true);
 
     try {
@@ -96,7 +99,7 @@ function sendVerificationEmail($email, $token) {
                 <div class="content">
                     <h2>Confirm it\'s you</h2>
                     <p>Thanks for using CryptoLearn. To confirm it\'s you, please verify your email.</p>
-                    <a href="http://localhost/example1/login_signup/verify.php?token=' . $token . '">Verify your email</a>
+                    <a href="' . htmlspecialchars($verifyUrl, ENT_QUOTES, 'UTF-8') . '">Verify your email</a>
                 </div>
                 <div class="footer">
                     <p>What\'s CryptoLearn?</p>

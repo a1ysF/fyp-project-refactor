@@ -1,22 +1,20 @@
-<?php 
+<?php
 
-// $servername = "lrgs.ftsm.ukm.my";
-// $username = "a185640";
-// $password = "bigpurplefrog";
-// $dbname = "a185640";
-
-$servername = 'localhost';
-$username = 'root';
-$password = '';
-$dbname = 'fyp';
+// Railway MySQL (when linked to the web service) — falls back to local XAMPP defaults
+$servername = getenv('MYSQLHOST') ?: 'localhost';
+$port = getenv('MYSQLPORT') ?: '3306';
+$username = getenv('MYSQLUSER') ?: 'root';
+$password = getenv('MYSQLPASSWORD') !== false ? getenv('MYSQLPASSWORD') : '';
+$dbname = getenv('MYSQLDATABASE') ?: 'fyp';
 $charset = 'utf8mb4';
 
+$dsn = "mysql:host=$servername;port=$port;dbname=$dbname;charset=$charset";
+
 try {
-    $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+    $conn = new PDO($dsn, $username, $password);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    //echo "Connected successfully"; // Optional: Just to confirm successful connection
 } catch (PDOException $e) {
-    die("Connection failed: " . $e->getMessage());
+    die('Connection failed: ' . $e->getMessage());
 }
 
 ?>

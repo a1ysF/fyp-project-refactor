@@ -853,7 +853,7 @@ $students_records = $stmt->fetchAll(PDO::FETCH_ASSOC);
         // Function to check uniqueness of class_id
         function checkClassIdUnique(classId, callback) {
             $.ajax({
-                url: 'http://localhost/example1/dashboard/dash_teach/check_class_id.php',
+                url: 'check_class_id.php',
                 type: 'POST',
                 data: { class_id: classId },
                 dataType: 'json',
@@ -869,7 +869,7 @@ $students_records = $stmt->fetchAll(PDO::FETCH_ASSOC);
         // Function to check uniqueness of class_code
         function checkClassCodeUnique(classCode, callback) {
             $.ajax({
-                url: 'http://localhost/example1/dashboard/dash_teach/check_class_code.php',
+                url: 'check_class_code.php',
                 type: 'POST',
                 data: { class_code: classCode },
                 dataType: 'json',
@@ -918,7 +918,7 @@ $students_records = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
             // Perform AJAX request to submit form data to crud_class.php
             $.ajax({
-                url: 'http://localhost/example1/dashboard/dash_teach/crud_class.php', // Update this URL as per your directory structure
+                url: 'crud_class.php',
                 type: 'POST',
                 data: $(this).serialize(),
                 dataType: 'json',

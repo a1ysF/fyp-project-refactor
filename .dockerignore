@@ -1,0 +1,11 @@
+.git
+.gitignore
+.env
+.env.*
+*.md
+!README_RAILWAY_DEPLOYMENT.md
+node_modules
+.vscode
+.idea
+login_signup/example1.code-workspace
+Composer-Setup.exe
