@@ -1,0 +1,30 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+
+# Environment / secrets
+.env
+.env.local
+
+# Logs
+*.log
+
+# User uploaded/generated files
+uploads/*
+!uploads/.gitkeep
+!uploads/images/
+!uploads/images/.gitkeep
+!uploads/videos/
+!uploads/videos/.gitkeep
+!uploads/materials/
+!uploads/materials/.gitkeep
+
+# Dependencies
+node_modules/
+
+# Installer files
+Composer-Setup.exe
